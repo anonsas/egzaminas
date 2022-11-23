@@ -24,8 +24,3 @@ db.sequelize.sync().then(() => {
     console.log(`Server is running on PORT:${process.env.PORT}`);
   });
 });
-
-// search for books.
-// edit books
-// ivertinti knyga.
-// admin - control users, add book categories,

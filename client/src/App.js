@@ -1,5 +1,5 @@
 import './App.scss';
-import { Page } from './constants';
+import { Page } from './constants/index';
 import { Header, Footer, RequireAuth } from './components';
 import { AuthProvider } from './contexts/AuthContext';
 import { Routes, Route } from 'react-router-dom';
@@ -24,8 +24,6 @@ function App() {
         <Route path="form" element={<Page.Book />} />
         <Route path="profile" element={<Page.Profile />} />
         <Route path="*" element={<Page.NotFound />} />
-
-        {/* <Route path="book/:id" element={<Page.Post />} /> */}
       </Routes>
 
       <Footer />

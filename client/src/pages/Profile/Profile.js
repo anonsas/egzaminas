@@ -8,7 +8,6 @@ import { Card } from '../../components';
 function Profile() {
   const auth = useAuth();
   const navigate = useNavigate();
-  console.log(auth);
   const [userBooks, setUserBooks] = useState([]);
 
   useEffect(() => {

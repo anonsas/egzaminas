@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './Book.scss';
-import categories from '../../Constants';
 import { createNewBook } from '../../utils/books.utils';
 import { useNavigate } from 'react-router-dom';
+import categoryData from '../../constants/categoryData';
 
-function PostForm() {
+function Book() {
   const navigate = useNavigate();
 
   const [author, setAuthor] = useState('');
@@ -35,7 +35,7 @@ function PostForm() {
   };
 
   return (
-    <div className="post-form">
+    <div className="book-form">
       <form onSubmit={submitFormHandler} className="form">
         <div className="form__input">
           <label htmlFor="title">Author:</label>
@@ -76,7 +76,7 @@ function PostForm() {
             <option value={0} disabled>
               Choose from list
             </option>
-            {categories.map((category) => (
+            {categoryData.map((category) => (
               <option key={category.id} value={category.type}>
                 {category.type}
               </option>
@@ -93,4 +93,4 @@ function PostForm() {
   );
 }
 
-export default PostForm;
+export default Book;
