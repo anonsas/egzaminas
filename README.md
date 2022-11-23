@@ -1,12 +1,6 @@
-# Egzaminas
+# Biblioteka
 
-Recipe application.  
-Live preview:
-
-## Description
-
-Forkify is an awesome recipe application.
-Where you can find and add recipes to your bookmarks.
+Baigiamasis darbas.
 
 ## Technology stack
 
@@ -16,6 +10,9 @@ This project was built using [Node v16.x] and uses the following technologies:
 - SASS
 - React
 - Webpack
+- Node
+- Express
+- MySQL
 
 ## Installation
 
@@ -23,17 +20,18 @@ This project was built using [Node v16.x] and uses the following technologies:
 2. Clone the repository.
 
 ```bash
-$ git clone https://github.com/anonsas/25-forkify.git
+$ git clone https://github.com/anonsas/egzaminas.git
 ```
 
-3. Navigate to the project's root directory.
-4. Install all the dependencies listed in package.json.
+3. Navigate to the project's root directory, where is /Client and /Server.
+4. Open: /Client and /Server, in separated terminals.
+5. Install all the dependencies listed in package.json in each terminal.
 
 ```bash
 npm install
 ```
 
-5. Run a local development server.
+5. Run a local development server on both terminals.
 
 ```bash
 npm start

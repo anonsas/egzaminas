@@ -1,13 +1,13 @@
 import './App.scss';
 import { Page } from './constants';
-import { Navbar, Footer, RequireAuth } from './components';
+import { Header, Footer, RequireAuth } from './components';
 import { AuthProvider } from './contexts/AuthContext';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <AuthProvider>
-      <Navbar />
+      <Header />
 
       <Routes>
         <Route path="/" element={<Page.Home />} />

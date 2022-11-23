@@ -1,0 +1,10 @@
+@import '../../App.scss';
+
+.register {
+  margin: 7rem auto;
+  @include box;
+
+  &__heading {
+    font-size: 3rem;
+  }
+}
