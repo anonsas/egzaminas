@@ -28,6 +28,7 @@ function Home() {
           author={book.author}
           title={book.title}
           year={book.year}
+          category={book.category}
           userId={book.UserId}
           username={book.username}
         />

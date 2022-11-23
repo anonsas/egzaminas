@@ -25,11 +25,7 @@ db.sequelize.sync().then(() => {
   });
 });
 
-// new book - page. Author, title
 // search for books.
 // edit books
 // ivertinti knyga.
-// show form
 // admin - control users, add book categories,
-// user - reserve a book, how many days he want to read.
-//

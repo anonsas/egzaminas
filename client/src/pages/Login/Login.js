@@ -13,26 +13,34 @@ function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  const [errorMessage, setErrorMessage] = useState('');
+
   const submitLoginHandler = async (e) => {
     e.preventDefault();
     if (!username || !password) return alert('Please fill the form!');
-
     const response = await login(username, password);
-    localStorage.setItem('accessToken', response.accessToken);
-    auth.login({
-      id: response.id,
-      username: response.username,
-      role: response.role,
-      status: true,
-    });
-    navigate('/', { replace: true });
-    setUsername('');
-    setPassword('');
+
+    if (response.accessToken) {
+      localStorage.setItem('accessToken', response.accessToken);
+
+      auth.login({
+        id: response.id,
+        username: response.username,
+        role: response.role,
+        status: true,
+      });
+      navigate('/', { replace: true });
+      setUsername('');
+      setPassword('');
+    } else {
+      setErrorMessage(response.error);
+    }
   };
 
   return (
     <main className="login">
       <h1 className="login__heading">Sign-in</h1>
+      <span style={{ color: 'orangered' }}>{errorMessage}</span>
 
       <Form
         submitFormHandler={submitLoginHandler}

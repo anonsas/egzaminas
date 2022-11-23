@@ -33,20 +33,19 @@ export const createNewBook = async (postData) => {
   }
 };
 
-// export const likePostHandler = async (postId) => {
-//   try {
-//     const response = await fetch(`http://localhost:4000/likes`, {
-//       method: 'POST',
-//       headers: {
-//         'Content-type': 'application/json',
-//         accessToken: localStorage.getItem('accessToken'),
-//       },
-//       body: JSON.stringify({ PostId: postId }),
-//     });
-//     if (!response.ok) throw new Error(`${response.status}`);
-//     const data = await response.json();
-//     return data;
-//   } catch (error) {
-//     alert(error.message);
-//   }
-// };
+export const getBookByUser = async (userId) => {
+  try {
+    const response = await fetch(`http://localhost:4000/books/user/${userId}`, {
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json',
+        accessToken: localStorage.getItem('accessToken'),
+      },
+    });
+    if (!response.ok) throw new Error(`${response.status}`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    alert(error.message);
+  }
+};

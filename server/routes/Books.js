@@ -32,14 +32,13 @@ router.delete('/:id', validateToken, async (req, res) => {
   res.json('Post Deleted Successfully');
 });
 
-// // Get All Posts, written by the specific User.
-// router.get('/user/:id', async (req, res) => {
-//   const id = req.params.id;
-//   const postsByUserId = await Posts.findAll({
-//     where: { UserId: id },
-//     include: [Likes],
-//   });
-//   res.json(postsByUserId);
-// });
+// Get All Books, written by the specific User.
+router.get('/user/:id', async (req, res) => {
+  const id = req.params.id;
+  const postsByUserId = await Books.findAll({
+    where: { UserId: id },
+  });
+  res.json(postsByUserId);
+});
 
 module.exports = router;

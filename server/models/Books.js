@@ -12,13 +12,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    category: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   });
-
-  Books.associate = (models) => {
-    Books.hasMany(models.Ratings, {
-      onDelete: 'cascade',
-    });
-  };
 
   return Books;
 };

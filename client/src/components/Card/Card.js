@@ -6,6 +6,7 @@ function Card({
   author,
   title,
   year,
+  category,
   username,
   authUser,
   openDeleteModalHandler,
@@ -19,6 +20,7 @@ function Card({
       </div>
       <div className="card__user">
         <span>{username}</span>
+        <span>{category}</span>
       </div>
 
       {authUser && (

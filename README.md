@@ -31,7 +31,7 @@ $ git clone https://github.com/anonsas/egzaminas.git
 npm install
 ```
 
-5. Run a local development server on both terminals.
+6. Run a local development server on both terminals.
 
 ```bash
 npm start

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Book.scss';
+import categories from '../../Constants';
 import { createNewBook } from '../../utils/books.utils';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,6 +10,7 @@ function PostForm() {
   const [author, setAuthor] = useState('');
   const [title, setTitle] = useState('');
   const [year, setYear] = useState('');
+  const [category, setCategory] = useState(0);
 
   const [errorMessage, setErrorMessage] = useState(false);
 
@@ -19,14 +21,15 @@ function PostForm() {
   const submitFormHandler = async (e) => {
     e.preventDefault();
 
-    if (!author || !title || !year) {
+    if (!author || !title || !year || category === 0) {
       setErrorMessage(true);
     } else {
-      await createNewBook({ author, title, year });
+      await createNewBook({ author, title, year, category });
       navigate('/');
       setAuthor('');
       setTitle('');
       setYear('');
+      setCategory('');
       setErrorMessage(false);
     }
   };
@@ -65,6 +68,20 @@ function PostForm() {
             placeholder="year"
             autoComplete="off"
           />
+        </div>
+
+        <div className="form__input">
+          <label htmlFor="title">Category:</label>
+          <select value={category} onChange={(e) => setCategory(e.target.value)}>
+            <option value={0} disabled>
+              Choose from list
+            </option>
+            {categories.map((category) => (
+              <option key={category.id} value={category.type}>
+                {category.type}
+              </option>
+            ))}
+          </select>
         </div>
         <span style={{ color: 'orangered' }}>
           {errorMessage && 'Please fill the form!'}
