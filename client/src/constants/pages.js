@@ -5,7 +5,7 @@ import Register from '../pages/Register/Register';
 import Book from '../pages/Book/Book';
 // import PostForm from '../pages/PostForm/PostForm';
 // import Profile from '../pages/Profile/Profile';
-// import UserProfile from '../pages/UserProfile/UserProfile';
+import Profile from '../pages/Profile/Profile';
 import NotFound from '../pages/NotFound/NotFound';
 
 const pages = {
@@ -14,6 +14,7 @@ const pages = {
   Login,
   Register,
   Book,
+  Profile,
   NotFound,
 };
 

@@ -21,11 +21,11 @@ function App() {
         />
         <Route path="login" element={<Page.Login />} />
         <Route path="register" element={<Page.Register />} />
-        {/* <Route path="user/:id" element={<Page.UserProfile />} /> */}
-        {/* <Route path="post/:id" element={<Page.Post />} /> */}
-        <Route path="form" element={<Page.PostForm />} />
+        <Route path="form" element={<Page.Book />} />
         <Route path="profile" element={<Page.Profile />} />
         <Route path="*" element={<Page.NotFound />} />
+
+        {/* <Route path="book/:id" element={<Page.Post />} /> */}
       </Routes>
 
       <Footer />

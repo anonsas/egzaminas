@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import './Profile.scss';
 import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
@@ -5,6 +6,10 @@ import { useNavigate } from 'react-router-dom';
 function Profile() {
   const auth = useAuth();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem('accessToken')) navigate('/login');
+  }, [navigate]);
 
   const logoutHandler = () => {
     localStorage.removeItem('accessToken');
@@ -21,7 +26,7 @@ function Profile() {
         </button>
       </div>
       <div className="profile__posts">
-        <h3>Here are your recent posts:</h3>
+        <h3>Here are your books:</h3>
       </div>
     </main>
   );

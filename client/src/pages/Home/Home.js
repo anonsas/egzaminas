@@ -15,22 +15,21 @@ function Home() {
   useEffect(() => {
     (async () => {
       const books = await getAllBooks();
-      // setBookList(books.postList);
       setBookList(books);
     })();
   }, []);
 
   return (
     <main className="home">
-      {bookList?.map((post) => (
+      {bookList?.map((book) => (
         <Card
-          key={post.id}
-          postId={post.id}
-          title={post.title}
-          text={post.postText}
-          userId={post.UserId}
-          username={post.username}
-          // likesCount={post.Likes.length}
+          key={book.id}
+          bookId={book.id}
+          author={book.author}
+          title={book.title}
+          year={book.year}
+          userId={book.UserId}
+          username={book.username}
         />
       ))}
     </main>

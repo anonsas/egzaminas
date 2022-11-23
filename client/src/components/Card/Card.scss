@@ -3,11 +3,11 @@
 .card {
   @include box;
   position: relative;
-  height: 40rem;
+  height: 20rem;
   padding: 0;
   background-color: var(--background-color-2);
 
-  &__title {
+  &__author {
     flex: 20%;
     color: var(--gold-color);
     background-color: var(--background-color-1);
@@ -16,10 +16,11 @@
     place-content: center;
   }
 
-  &__text {
-    flex: 60%;
-    display: grid;
-    place-content: center;
+  &__details {
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     cursor: pointer;
   }
 
@@ -31,7 +32,7 @@
     padding: 0.6em;
   }
 
-  &__details-container {
+  &__user {
     flex: 20%;
     padding: 0 2rem;
     color: var(--white-color);

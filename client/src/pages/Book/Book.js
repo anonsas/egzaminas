@@ -10,9 +10,7 @@ function PostForm() {
   const [title, setTitle] = useState('');
   const [year, setYear] = useState('');
 
-  const [invalidAuthor, setInvalidAuthor] = useState(false);
-  const [invalidTitle, setInvalidTitle] = useState(false);
-  const [invalidYear, setInvalidYear] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(false);
 
   useEffect(() => {
     if (!localStorage.getItem('accessToken')) navigate('/login');
@@ -21,24 +19,15 @@ function PostForm() {
   const submitFormHandler = async (e) => {
     e.preventDefault();
 
-    if (!author) {
-      setInvalidAuthor(true);
-    } else if (!title) {
-      setInvalidAuthor(true);
-      setInvalidTitle(false);
-    } else if (!year) {
-      setInvalidAuthor(true);
-      setInvalidTitle(true);
-      setInvalidYear(false);
+    if (!author || !title || !year) {
+      setErrorMessage(true);
     } else {
       await createNewBook({ author, title, year });
       navigate('/');
       setAuthor('');
       setTitle('');
       setYear('');
-      setInvalidAuthor(false);
-      setInvalidTitle(false);
-      setInvalidYear(false);
+      setErrorMessage(false);
     }
   };
 
@@ -51,12 +40,9 @@ function PostForm() {
             type="text"
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
-            placeholder="Title"
+            placeholder="author"
             autoComplete="off"
           />
-          <span style={{ color: 'orangered' }}>
-            {invalidAuthor && 'Please enter author!'}
-          </span>
         </div>
 
         <div className="form__input">
@@ -65,27 +51,24 @@ function PostForm() {
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="Title"
+            placeholder="title"
             autoComplete="off"
           />
-          <span style={{ color: 'orangered' }}>
-            {invalidTitle && 'Please enter author!'}
-          </span>
         </div>
 
         <div className="form__input">
-          <label htmlFor="title">Title:</label>
+          <label htmlFor="title">Year:</label>
           <input
             type="text"
             value={year}
             onChange={(e) => setYear(e.target.value)}
-            placeholder="Title"
+            placeholder="year"
             autoComplete="off"
           />
-          <span style={{ color: 'orangered' }}>
-            {invalidYear && 'Please enter author!'}
-          </span>
         </div>
+        <span style={{ color: 'orangered' }}>
+          {errorMessage && 'Please fill the form!'}
+        </span>
 
         <button type="submit">Submit</button>
       </form>

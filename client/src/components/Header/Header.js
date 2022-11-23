@@ -21,7 +21,7 @@ function Header() {
           </NavLink>
           <div className="header__links">
             {auth.user.role === 'admin' && <NavLink to="/admin">Admin</NavLink>}
-            <NavLink to="/book">New Book</NavLink>
+            <NavLink to="/form">New Book</NavLink>
             <NavLink to="/profile">Profile</NavLink>
           </div>
         </nav>
