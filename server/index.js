@@ -13,7 +13,7 @@ const adminRouter = require('./routes/Admin');
 app.use('/admin', adminRouter);
 
 const usersRouter = require('./routes/Users');
-app.use('/auth', usersRouter);
+app.use('/users', usersRouter);
 
 const booksRouter = require('./routes/Books');
 app.use('/books', booksRouter);

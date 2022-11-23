@@ -1,6 +1,6 @@
 export const userAuthentication = async () => {
   try {
-    const response = await fetch('http://localhost:4000/auth/auth', {
+    const response = await fetch('http://localhost:4000/users', {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',

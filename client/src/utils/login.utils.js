@@ -1,6 +1,6 @@
 export const login = async (username, password) => {
   try {
-    const response = await fetch('http://localhost:4000/auth/login', {
+    const response = await fetch('http://localhost:4000/users/login', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -12,6 +12,6 @@ export const login = async (username, password) => {
     const data = await response.json();
     return data;
   } catch (error) {
-    alert(error.message);
+    return error;
   }
 };

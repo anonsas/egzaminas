@@ -2,7 +2,7 @@ import Home from '../pages/Home/Home';
 import Admin from '../pages/Admin/Admin';
 import Login from '../pages/Login/Login';
 import Register from '../pages/Register/Register';
-// import Post from '../pages/Post/Post';
+import Book from '../pages/Book/Book';
 // import PostForm from '../pages/PostForm/PostForm';
 // import Profile from '../pages/Profile/Profile';
 // import UserProfile from '../pages/UserProfile/UserProfile';
@@ -13,6 +13,7 @@ const pages = {
   Home,
   Login,
   Register,
+  Book,
   NotFound,
 };
 

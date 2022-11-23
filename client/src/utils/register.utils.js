@@ -1,6 +1,6 @@
 export const register = async (username, password) => {
   try {
-    const response = await fetch('http://localhost:4000/auth', {
+    const response = await fetch('http://localhost:4000/users', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',

@@ -6,10 +6,11 @@ const { sign } = require('jsonwebtoken');
 const { validateToken } = require('../middlewares/AuthMiddleware');
 require('dotenv').config();
 
-router.get('/auth', validateToken, (req, res) => {
+router.get('/', validateToken, (req, res) => {
   res.json(req.user);
 });
 
+// Register
 router.post('/', async (req, res) => {
   const { username, password } = req.body;
 
@@ -24,7 +25,7 @@ router.post('/', async (req, res) => {
   res.json('User Created!!!');
 });
 
-// Checking if the user exists.
+// Login
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
